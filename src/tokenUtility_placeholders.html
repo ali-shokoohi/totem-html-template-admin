@@ -23,6 +23,7 @@
     </style>
     <div class="token-utility-container">
       <!-- Start loop -->
+      {{ range .utilities }}
       <div class="token-utility-container-item">
         <div
           style="
@@ -40,7 +41,7 @@
               width="82px"
               height="82px"
               style="border-radius: 10%"
-              src="{{placeholder_img_src}}"
+              src={{ index . imgSrc }}
             />
           </div>
           <div
@@ -55,12 +56,13 @@
             "
           >
             <div style="font-size: 16px; font-weight: bold">
-              {{placeholder_title}}
+              {{ index . title }}
             </div>
-            <div style="font-size: 16px">{{placeholder_description}}</div>
+            <div style="font-size: 16px">{{ index . description }}</div>
           </div>
         </div>
       </div>
+      {{ end }}
       <!-- End loop -->
     </div>
     <!-- end, copy  -->

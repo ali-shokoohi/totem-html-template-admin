@@ -74,6 +74,7 @@
     <div class="team-investors-container">
       <div class="team-investors-container-left">
         <!-- Start loop -->
+        {{ range .users }}
         <div class="team-investors-container-left-item">
           <div>
             <img
@@ -81,14 +82,14 @@
               width="101px"
               height="101px"
               style="border-radius: 50%"
-              src="{{placeholder}}"
+              src="{{ index . profilePic }}"
             />
           </div>
           <div>
             <span style="color: white; font-size: 16px"
-              >{{placeholder:name}}</span
+              >{{index . Name}}</span
             >
-            <a target="_blank" href="{{placeholder: linkedin_link}}"
+            <a target="_blank" href="{{ index . linkedinLink }}"
               ><span
                 style="
                   display: inline-block;
@@ -101,23 +102,26 @@
               </span></a
             >
             <div style="font-size: 14px; opacity: 0.4; color: white">
-              {{placeholder: position like Co-founder}}
+              {{ index . position }}
             </div>
           </div>
         </div>
+        {{ end }}
         <!-- End loop -->
       </div>
       <div class="team-investors-container-right">
         <div class="item-investors-container-right-div">
           <!-- Start Loop -->
+          {{ range .supporterLogos }}
           <div class="team-investors-container-right-item">
             <img
               class="team-investors-container-img"
               width="125px"
               height="30px"
-              src="{{placeholder:img_src}}"
+              src={{ . }}
             />
           </div>
+          {{ end }}
           <!-- End Loop -->
         </div>
       </div>
