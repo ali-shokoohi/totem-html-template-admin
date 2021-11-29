@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
   <head></head>
   <body>
     <!-- start, please copy from here -->
@@ -71,53 +71,53 @@
       }
     </style>
 
-    <div class="team-investors-container">
-      <div class="team-investors-container-left">
+    <div class='team-investors-container'>
+      <div class='team-investors-container-left'>
         <!-- Start loop -->
         {{ range .users }}
-        <div class="team-investors-container-left-item">
+        <div class='team-investors-container-left-item'>
           <div>
             <img
-              class="team-investors-container-img"
-              width="101px"
-              height="101px"
-              style="border-radius: 50%"
-              src="{{ index . profilePic }}"
+              class='team-investors-container-img'
+              width='101px'
+              height='101px'
+              style='border-radius: 50%'
+              src='{{ .profilePic }}'
             />
           </div>
           <div>
-            <span style="color: white; font-size: 16px"
-              >{{index . Name}}</span
+            <span style='color: white; font-size: 16px'
+              >{{ .name }}</span
             >
-            <a target="_blank" href="{{ index . linkedinLink }}"
+            <a target='_blank' href='{{ .linkedinLink }}'
               ><span
-                style="
+                style='
                   display: inline-block;
                   width: 16px;
                   height: 16px;
                   background-color: #82858b;
-                "
+                '
               >
                 in
               </span></a
             >
-            <div style="font-size: 14px; opacity: 0.4; color: white">
-              {{ index . position }}
+            <div style='font-size: 14px; opacity: 0.4; color: white'>
+              {{ .position }}
             </div>
           </div>
         </div>
         {{ end }}
         <!-- End loop -->
       </div>
-      <div class="team-investors-container-right">
-        <div class="item-investors-container-right-div">
+      <div class='team-investors-container-right'>
+        <div class='item-investors-container-right-div'>
           <!-- Start Loop -->
           {{ range .supporterLogos }}
-          <div class="team-investors-container-right-item">
+          <div class='team-investors-container-right-item'>
             <img
-              class="team-investors-container-img"
-              width="125px"
-              height="30px"
+              class='team-investors-container-img'
+              width='125px'
+              height='30px'
               src={{ . }}
             />
           </div>
